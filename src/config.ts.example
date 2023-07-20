@@ -1,0 +1,8 @@
+// discord
+export const discordToken = "xxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+export const discordClientId = "0000000000000000000"
+export const discordGuildId = "000000000000000000"
+
+// openai
+export const openaiToken = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
