@@ -64,12 +64,12 @@ client.once(discord.Events.ClientReady, async (c) => {
     );
 
     // get response
-    let response = await erb.ErebusDoThingy.getResponse(
-        "in three words or less, tell me what you want your activity status to say",
+    let activityStatus = await erb.ErebusDoThingy.getResponse(
+        "in three words or less, tell me what you want your discord activity status to say. it must have something to do with minecraft, akivira, or your brother helios.",
     );
-    response = response.replaceAll(".", "");
-    console.log(`setting status to ${response}`);
-    client.user?.setActivity({ name: response });
+    activityStatus = activityStatus.replaceAll(".", "");
+    console.log(`setting status to ${activityStatus}`);
+    client.user?.setActivity({ name: activityStatus });
 });
 
 // Reply event
