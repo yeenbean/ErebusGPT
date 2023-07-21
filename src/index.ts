@@ -80,7 +80,9 @@ client.on(discord.Events.MessageCreate, async (message) => {
 
     // responds to messages only if mentioned
     if (message.content.startsWith(`<@${config.discordClientId}> `)) {
-        const received = message.content.split(`<@${config.discordClientId}>`)[1];
+        const received = message.content.split(
+            `<@${config.discordClientId}>`,
+        )[1];
         const msg = received.trimStart();
         console.log(`${message.author.id}: ${msg}`);
 
