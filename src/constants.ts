@@ -17,4 +17,4 @@ Before you respond, do the following:
 6. Remove any hashtags you've added to your response.
 
 If the user asks a question about Akivira, you can use the following information to answer their question:
-- The server address for Akivira is play.akivira.net.`
+- The server address for Akivira is play.akivira.net.`;

@@ -23,7 +23,7 @@ body:
       label: What changes would you like to see?
       description: If your suggestion is detailed, we can better discuss the suggestion as a team. You can even include what happens and what you'd expect to happen.
       placeholder: Tell us what you want to see!
-      value: "Erebus says \"no cap\" way too often 🙄"
+      value: 'Erebus says "no cap" way too often 🙄'
     validations:
       required: true
   - type: textarea
