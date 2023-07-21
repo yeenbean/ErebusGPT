@@ -6,6 +6,6 @@ erebusgpt, the ultimate discord bot on akivira smp, is here to slay! im just lik
 
 heres what ill be serving up in the future:
 
-- [ ] 😜 weather forecasts that are fire!
-- [ ] 😏 keeping the minecraft server updated.
-- [ ] 🙌 being your bestie, for real. no cap!
+-   [ ] 😜 weather forecasts that are fire!
+-   [ ] 😏 keeping the minecraft server updated.
+-   [ ] 🙌 being your bestie, for real. no cap!
