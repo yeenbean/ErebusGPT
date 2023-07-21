@@ -76,11 +76,11 @@ client.once(discord.Events.ClientReady, async (c) => {
 client.on(discord.Events.MessageCreate, async (message) => {
     // return if any unwanted messages are found
     if (message.author.bot) return;
-    if (!message.content.startsWith("<@1130643818207793212> ")) return;
+    if (!message.content.startsWith(`<@${config.discordClientId}> `)) return;
 
     // responds to messages only if mentioned
-    if (message.content.startsWith("<@1130643818207793212> ")) {
-        const received = message.content.split("<@1130643818207793212>")[1];
+    if (message.content.startsWith(`<@${config.discordClientId}> `)) {
+        const received = message.content.split(`<@${config.discordClientId}>`)[1];
         const msg = received.trimStart();
         console.log(`${message.author.id}: ${msg}`);
 
@@ -131,12 +131,12 @@ client.on(discord.Events.MessageCreate, async (message) => {
 
                     await (
                         client.channels.cache.get(
-                            "917607435169067050",
+                            config.moderationChannel,
                         ) as discord.TextChannel
                     ).send(reportMessage);
                     await (
                         client.channels.cache.get(
-                            "917607435169067050",
+                            config.moderationChannel,
                         ) as discord.TextChannel
                     ).send({ embeds: [reportEmbed] });
                 }
@@ -153,7 +153,7 @@ client.on(discord.Events.MessageCreate, async (message) => {
             await message.reply(response);
         }
 
-        if (message.author.tag == "yeenimal#0" && msg == "/restart")
+        if (message.author.id == config.developerId && msg == "/restart")
             client.destroy();
     }
 });
