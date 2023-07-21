@@ -1,29 +1,29 @@
 {
-  "name": "dababy",
-  "version": "1.0.0",
-  "description": "its a discord bot called da baby! but not after the rapper!!!!!",
-  "main": "index.js",
-  "author": "yeenbean",
-  "license": "MIT",
-  "private": true,
-  "dependencies": {
-    "discord.js": "^14.11.0",
-    "openai": "^3.3.0",
-    "typescript": "^5.1.6"
-  },
-  "scripts": {
-    "build": "yarn tsc",
-    "start": "node build/index.js",
-    "deploy:commands": "node build/deploy-commands.js",
-    "lint": "eslint src/",
-    "formatter": "prettier . --check",
-    "formatter:write": "prettier . --write"
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.1.0",
-    "@typescript-eslint/parser": "^6.1.0",
-    "eslint": "^8.45.0",
-    "eslint-config-prettier": "^8.8.0",
-    "prettier": "3.0.0"
-  }
+    "name": "dababy",
+    "version": "1.0.0",
+    "description": "its a discord bot called da baby! but not after the rapper!!!!!",
+    "main": "index.js",
+    "author": "yeenbean",
+    "license": "MIT",
+    "private": true,
+    "dependencies": {
+        "discord.js": "^14.11.0",
+        "openai": "^3.3.0",
+        "typescript": "^5.1.6"
+    },
+    "scripts": {
+        "build": "yarn tsc",
+        "start": "node build/index.js",
+        "deploy:commands": "node build/deploy-commands.js",
+        "lint": "eslint src/",
+        "formatter": "prettier . --check",
+        "formatter:write": "prettier . --write"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^6.1.0",
+        "@typescript-eslint/parser": "^6.1.0",
+        "eslint": "^8.45.0",
+        "eslint-config-prettier": "^8.8.0",
+        "prettier": "3.0.0"
+    }
 }
