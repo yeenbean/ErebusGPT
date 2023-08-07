@@ -1,0 +1,23 @@
+{
+    "tasks": {
+        "start": "deno run --allow-read --allow-net --allow-env src/index.ts",
+        "check": "deno check src/*.ts",
+        "dev:commands": "deno run --allow-read --allow-net --allow-env src/deploy-commands.ts",
+        "lint": "deno lint src/*",
+        "format": "deno fmt src/* deno.jsonc"
+    },
+    "fmt": {
+        "indentWidth": 4,
+        "semiColons": true,
+        "lineWidth": 80,
+        "include": ["src/"]
+    },
+    "lint": {
+        "rules": {
+            "exclude": [
+                "no-inferrable-types",
+                "no-explicit-any"
+            ]
+        }
+    }
+}

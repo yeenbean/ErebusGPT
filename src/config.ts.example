@@ -1,8 +1,23 @@
-// discord
+// discord - bot token and
 export const discordToken = "xxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 export const discordClientId = "0000000000000000000"
-export const discordGuildId = "000000000000000000"
+
+// discord - guild settings
+export const moderationChannel = "000000000000000000"   // channel used to send
+                                                        // alerts when the bot
+                                                        // flags a message as
+                                                        // inappropriate
 
 // openai
 export const openaiToken = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
+// discord - development settings
+export const discordGuildId = "000000000000000000"  // The server ID where you
+                                                    // would like to publish
+                                                    // private or in-development
+                                                    // slash commands.
+export const developerId = "000000000000000000" // Your account's Discord
+                                                // ID. Useful for restricting
+                                                // commands to just your account
+                                                // (i.e. a command to shut down
+                                                //the bot).
