@@ -1,7 +1,7 @@
 {
     "tasks": {
         "start": "deno run --allow-read --allow-net --allow-env src/index.ts",
-        "check": "deno check src/*",
+        "check": "deno check src/*.ts",
         "dev:commands": "deno run --allow-read --allow-net --allow-env src/deploy-commands.ts",
         "lint": "deno lint src/*",
         "format": "deno fmt src/* deno.jsonc"
