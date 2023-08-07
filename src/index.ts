@@ -1,9 +1,9 @@
 // import config
-import config = require("./config");
+import * as config from "./config.ts";
 
 // import packages
-import discord = require("discord.js");
-import erb = require("./ai");
+import discord from "npm:discord.js@^14.12.1";
+import * as erb from "./ai.ts";
 
 // Create a new discord client instance
 const client = new discord.Client({
@@ -16,7 +16,7 @@ const client = new discord.Client({
 });
 
 // Create commands collection
-import commands = require("./commands");
+import * as commands from "./commands.ts";
 client.commands = new discord.Collection();
 client.commands.set(commands.Ping.data.name, commands.Ping);
 
@@ -155,8 +155,9 @@ client.on(discord.Events.MessageCreate, async (message) => {
             await message.reply(response);
         }
 
-        if (message.author.id == config.developerId && msg == "/restart")
+        if (message.author.id == config.developerId && msg == "/restart") {
             client.destroy();
+        }
     }
 });
 

@@ -1,6 +1,6 @@
-import openai = require("openai");
-import Constants = require("./constants");
-import config = require("./config");
+import openai from "npm:openai@^3.3.0";
+import * as Constants from "./constants.ts";
+import * as config from "./config.ts";
 
 // create openaiConfig
 const openaiConfig = new openai.Configuration({
@@ -10,7 +10,6 @@ const ai = new openai.OpenAIApi(openaiConfig);
 
 export const ErebusDoThingy = {
     /**
-     *
      * @param userMessage the text to throw at the chatbot
      * @returns this tells you what happened after moderation: 0 means the message was fine, 1 means it got flagged, and -1 means there was a processing error.
      */
@@ -32,7 +31,6 @@ export const ErebusDoThingy = {
     },
 
     /**
-     *
      * @param userMessage the text to throw at the chatbot.
      * @returns the chatbots message, created by yours truly 😏
      */
@@ -58,15 +56,18 @@ export const ErebusDoThingy = {
             });
 
         // typescript...
-        if (!result)
+        if (!result) {
             return "oops, didnt get that, mind giving it another go? (error -1)";
-        if (!result.data.choices[0].message)
+        }
+        if (!result.data.choices[0].message) {
             return "oops my bad i didnt get that. mind giving it another shot? (error -2) 😅";
+        }
 
         // set the response to a simple string (its easier trust me)
         let response = result.data.choices[0].message.content; // bffr
-        if (!response)
+        if (!response) {
             return "oops my bad i didnt get that. mind giving it another shot? (error -3) 😅";
+        }
 
         // process response
         response = response.toLowerCase(); // lowercase
