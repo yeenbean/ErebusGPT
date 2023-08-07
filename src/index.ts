@@ -2,7 +2,7 @@
 import * as config from "./config.ts";
 
 // import packages
-import discord = require("discord.js");
+import discord from "discord.js";
 import * as erb from "./ai.ts";
 
 // Create a new discord client instance

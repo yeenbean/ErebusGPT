@@ -1,4 +1,4 @@
-import discord = require("discord.js");
+import discord from "discord.js";
 import * as config from "./config.ts";
 
 // Construct and prepare an instance of the REST module
