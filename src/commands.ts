@@ -1,5 +1,5 @@
 import { CommandInteraction, SlashCommandBuilder } from "discord.js";
-import { ErebusDoThingy } from "./ai";
+import { ErebusDoThingy } from "./ai.ts";
 
 export const Ping = {
     data: new SlashCommandBuilder()

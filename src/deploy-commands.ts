@@ -1,11 +1,11 @@
 import discord = require("discord.js");
-import config = require("./config");
+import * as config from "./config.ts";
 
 // Construct and prepare an instance of the REST module
 const rest = new discord.REST().setToken(config.discordToken);
 
 // define commands
-import { publishedCommands } from "./commands";
+import { publishedCommands } from "./commands.ts";
 console.log(publishedCommands);
 
 // and deploy your commands!
