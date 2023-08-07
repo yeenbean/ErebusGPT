@@ -1,4 +1,4 @@
-import { CommandInteraction, SlashCommandBuilder } from "npm:discord.js@^14.12.1";
+import { CommandInteraction, SlashCommandBuilder } from "discord.js";
 import { ErebusDoThingy } from "./ai.ts";
 
 export const Ping = {

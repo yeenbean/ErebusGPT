@@ -1,4 +1,4 @@
-import openai from "npm:openai@^3.3.0";
+import openai = require("openai");
 import * as Constants from "./constants.ts";
 import * as config from "./config.ts";
 
