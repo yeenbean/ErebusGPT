@@ -1,8 +1,8 @@
 {
-    "name": "dababy",
-    "version": "1.0.0",
-    "description": "its a discord bot called da baby! but not after the rapper!!!!!",
-    "main": "index.js",
+    "name": "erebusgpt",
+    "version": "1.1.0",
+    "description": "just a chill black cat causing mischief in akivira! 😼",
+    "main": "index.ts",
     "author": "yeenbean",
     "license": "MIT",
     "private": true,
