@@ -21,3 +21,6 @@ export const developerId = "000000000000000000" // Your account's Discord
                                                 // commands to just your account
                                                 // (i.e. a command to shut down
                                                 //the bot).
+
+// openweathermap
+export const openWeatherMapKey = "00000000000000000000000000000000"
