@@ -19,6 +19,7 @@ const client = new discord.Client({
 import * as commands from "./commands.ts";
 client.commands = new discord.Collection();
 client.commands.set(commands.Ping.data.name, commands.Ping);
+client.commands.set(commands.WeatherCity.data.name, commands.WeatherCity);
 
 // create commands listener
 client.on(discord.Events.InteractionCreate, async (interaction) => {
