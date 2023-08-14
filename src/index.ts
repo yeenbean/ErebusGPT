@@ -4,8 +4,10 @@ import * as config from "./config.ts";
 // import packages
 import discord from "discord.js";
 import * as erb from "./ai.ts";
+import * as loggy from "https://deno.land/x/loggy@0.0.2/main.ts";
 
 // Create a new discord client instance
+loggy.debug("Creating a new Discord client instance");
 const client = new discord.Client({
     intents: [
         discord.IntentsBitField.Flags.Guilds,
@@ -16,16 +18,18 @@ const client = new discord.Client({
 });
 
 // Create commands collection
+loggy.debug("Setting up commands");
 import * as commands from "./commands.ts";
 client.commands = new discord.Collection();
 client.commands.set(commands.Ping.data.name, commands.Ping);
 client.commands.set(commands.WeatherCity.data.name, commands.WeatherCity);
 
 // create commands listener
+loggy.debug("Creating commands listener");
 client.on(discord.Events.InteractionCreate, async (interaction) => {
     // confirm that we've received a command
     if (!interaction.isChatInputCommand()) return;
-    console.log(interaction);
+    loggy.log(interaction.toString());
 
     // ignore if no matching command found
     const command: any = interaction.client.commands.get(
@@ -58,18 +62,19 @@ client.on(discord.Events.InteractionCreate, async (interaction) => {
 
 // Let us know in the console when the client is connected
 client.once(discord.Events.ClientReady, async (c) => {
-    console.log(
+    loggy.up(
         await erb.ErebusDoThingy.getResponse(
             `Rewrite the following in your style: "My name is ${c.user.username} and I have connected to Discord!"`,
         ),
     );
 
     // get response
+    loggy.debug("Setting activity status");
     let activityStatus = await erb.ErebusDoThingy.getResponse(
         "in three words or less, tell me what you want your discord activity status to say. it must have something to do with minecraft, akivira, or your brother helios.",
     );
     activityStatus = activityStatus.replaceAll(".", "");
-    console.log(`setting status to ${activityStatus}`);
+    loggy.log(`setting status to ${activityStatus}`);
     client.user?.setActivity({ name: activityStatus });
 });
 
@@ -85,7 +90,7 @@ client.on(discord.Events.MessageCreate, async (message) => {
             `<@${config.discordClientId}>`,
         )[1];
         const msg = received.trimStart();
-        console.log(`${message.author.id}: ${msg}`);
+        loggy.log(`${message.author.id}: ${msg}`);
 
         // let the user know youre thinking
         void message.channel.sendTyping();
@@ -153,6 +158,7 @@ client.on(discord.Events.MessageCreate, async (message) => {
         // get response
         const response = await erb.ErebusDoThingy.getResponse(msg);
         if (response) {
+            loggy.up(response);
             await message.reply(response);
         }
 
@@ -163,4 +169,5 @@ client.on(discord.Events.MessageCreate, async (message) => {
 });
 
 // Log into Discord with token
+loggy.debug("Logging into Discord");
 void client.login(config.discordToken);

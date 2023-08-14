@@ -1,6 +1,8 @@
 {
   "version": "2",
-  "remote": {},
+  "remote": {
+    "https://deno.land/x/loggy@0.0.2/main.ts": "5af72c21ee2252857650445d7201efa3ee1b28151ce5dfb449283c73c3212d26"
+  },
   "npm": {
     "specifiers": {
       "@typescript-eslint/eslint-plugin@^6.1.0": "@typescript-eslint/eslint-plugin@6.2.1_@typescript-eslint+parser@6.2.1__eslint@8.46.0__typescript@5.1.6_eslint@8.46.0_typescript@5.1.6",
