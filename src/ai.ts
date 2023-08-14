@@ -1,6 +1,7 @@
 import * as openai from "openai";
 import * as Constants from "./constants.ts";
 import * as config from "./config.ts";
+import * as loggy from "https://deno.land/x/loggy@0.0.2/main.ts";
 
 // create openaiConfig
 const openaiConfig = new openai.Configuration({
@@ -35,6 +36,7 @@ export const ErebusDoThingy = {
      * @returns the chatbots message, created by yours truly 😏
      */
     getResponse: async (userMessage: string): Promise<string> => {
+        loggy.debug(`Generating response for ${userMessage}`);
         const result = await ai
             .createChatCompletion({
                 model: "gpt-3.5-turbo-0613",
@@ -51,7 +53,7 @@ export const ErebusDoThingy = {
                 ],
             })
             .catch((error) => {
-                console.log(`ERROR: OpenAI: ${error}`);
+                loggy.fail(`ERROR: OpenAI: ${error}`);
                 //return 'oops, didnt get that, mind giving it another go? (error)'; // for some reason this line confuses ts.
             });
 

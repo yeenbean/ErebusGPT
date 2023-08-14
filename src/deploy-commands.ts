@@ -1,5 +1,6 @@
 import discord from "discord.js";
 import * as config from "./config.ts";
+import * as loggy from "https://deno.land/x/loggy@0.0.2/main.ts";
 
 // Construct and prepare an instance of the REST module
 const rest = new discord.REST().setToken(config.discordToken);
@@ -11,7 +12,7 @@ console.log(publishedCommands);
 // and deploy your commands!
 await (async () => {
     try {
-        console.log(
+        loggy.log(
             `Started refreshing ${publishedCommands.length} application (/) commands.`,
         );
 
@@ -21,11 +22,11 @@ await (async () => {
             { body: publishedCommands },
         );
 
-        console.log(
+        loggy.up(
             `Successfully reloaded ${data.length} application (/) commands.`,
         );
     } catch (error) {
         // And of course, make sure you catch and log any errors!
-        console.error(error);
+        loggy.critical(error);
     }
 })();
